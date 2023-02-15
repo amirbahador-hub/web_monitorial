@@ -1,0 +1,35 @@
+version: "3"
+
+services:
+
+  producer:
+    build: .
+    command: >
+      sh -c "sleep 15 &&
+             python manage.py migrate &&
+             python manage.py produce"
+    env_file:
+        - env.ini
+    depends_on:
+        - db
+        - zookeeper
+        - kafka
+    volumes:
+        - ./env.ini:/app/backend/env.ini
+
+  consumer:
+    build: .
+    command: >
+      sh -c "sleep 15 &&
+             python manage.py migrate &&
+             python manage.py consume"
+    env_file:
+        - env.ini
+    depends_on:
+        - db
+        - zookeeper
+        - kafka
+    volumes:
+        - ./env.ini:/app/backend/env.ini
+
+

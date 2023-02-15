@@ -1,0 +1,13 @@
+TODO
+====
+
+* Proper Logging instead of print [*]
+* Add efficent tests              [*]
+* Database indexing               [*]
+* Database Epoch Time             [*]
+* More TypeHints                  [*]
+* Fix setup.py                    [*]
+* GitHub action ci                [*]
+* Project Dockerizing             [*]
+* Aiven Configuration             [*]
+* Better Documentation            [*]
